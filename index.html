@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jacob's Question Game</title>
+</head>
+<body>
+    <h1>Question Game</h1>
+    <h2>hit 't' or 'f' to answer question true or false</h4>
+    <h1><span id="question">Press Space to Start</span></h1>
+    <h2>Your Score is: <span id="score">0</span></h5>
+    <button onclick="reset()">reset</button>
+
+    <script type="text/javascript">
+        var s=0;
+        var i=0;
+        var q1={
+            q:"Did I go to school at the University of Miami?",
+            a:"t"
+        }
+        var q2={
+            q:"Do I have a degree in Political Science?",
+            a:"t"
+        }
+        var q3={
+            q:"Did I play Quidditch?",
+            a:"t"
+        }
+        var q4={
+            q:"Do I have 2 siblings?",
+            a:"f"
+        }
+        var q5={
+            q:"Am I from Austin?",
+            a:"t"
+        }
+        var q6={
+            q:"Does 10-2*3/6 = 4?",
+            a: "f" 
+        }
+        var q7={
+            q:"Is Javascript related to Java?",
+            a:"f"
+        }
+        var q8={
+            q:"Is FSU the best school in Florida",
+            a:"f"
+        }
+        var q9={
+            q:"Does OU suck?",
+            a:"t"
+        }
+        var q0={
+            q:"Do I have a degree in Computer Science",
+            a:"t"            
+        }
+        var qEnd={
+            q:"You have completed this quiz",
+        }
+        var qNa=[q1,q2,q3,q4,q5,q6,q7,q8,q9,q0,qEnd];
+        document.onkeyup=function(event){
+            var answer=event.key;
+            if ((answer=="t" || answer =="f")&&qNa.length-1>i) {
+                if (answer==quest.a){
+                    alert("CORRECT!")
+                    s++;
+                    document.getElementById("score").textContent=s+" out of "+(i+1);
+                }
+                else{
+                    alert("incorrect!");
+                    document.getElementById("score").textContent=s+" out of "+(i+1);
+                }
+                i++;
+
+            }
+            quest=qNa[i];   
+            document.getElementById("question").textContent=quest.q;
+        }
+        function reset(){
+            i=0;
+            s=0;
+            document.getElementById("score").textContent=s;
+            document.getElementById("question").textContent="Press Space to Start";
+        }
+        
+
+    </script>
+</body>
+</html>
